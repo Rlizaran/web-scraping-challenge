@@ -1,0 +1,14 @@
+table.dataframe {
+    border-collapse: separate;
+    width: 100%;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}

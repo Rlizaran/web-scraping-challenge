@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission To Mars!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission To Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+
+    <!-- Mars Results from Scraper -->
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="heading"><strong>Latest Mars News</strong></h2>
+        <h3><strong>{{results.news_title}}</strong></h3>
+        <h4>{{results.news_p}}</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-7">
+        <h2 class="heading"><strong>Feature Mars Image</strong></h2>
+        <img src="{{results.featured_image_url}}" alt="featured_image_url" class="img-responsive">
+      </div>
+      <div class="col-md-5">
+        <h3 class="heading"><strong>Mars Facts</strong></h3>
+        {{results.mars_table | safe}}
+      </div>
+    </div>
+
+    <div class="row">
+      <h2 align="center"><strong>Mars Hemispheres</strong></h2>
+    </div>
+
+    <div class="row">
+      <div class='col-md-3'>
+        <img src="{{results.hemisphere_image_url[0].url}}" alt="hemisphere_image_url[0].url" class="img-responsive">
+        <h3>{{results.hemisphere_image_url[0].title}}</h3>
+      </div>
+      <div class='col-md-3'>
+        <img src="{{results.hemisphere_image_url[1].url}}" alt="hemisphere_image_url[1].url"class="img-responsive">
+        <h3>{{results.hemisphere_image_url[1].title}}</h3>
+      </div>
+      <div class='col-md-3'>
+        <img src="{{results.hemisphere_image_url[2].url}}" alt="hemisphere_image_url[2].url"class="img-responsive">
+        <h3>{{results.hemisphere_image_url[2].title}}</h3>
+      </div>
+      <div class='col-md-3'>
+        <img src="{{results.hemisphere_image_url[3].url}}" alt="hemisphere_image_url[3].url"class="img-responsive">
+        <h3>{{results.hemisphere_image_url[3].title}}</h3>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
